@@ -13,7 +13,7 @@ notif.set_urgency(notify2.URGENCY_NORMAL)
 notif.set_timeout(10000)
 
 for match in matches:
-	if match['mchstate'] == 'inprogress':
+	if match['mchstate'] == 'inprogress' or match['mchstate'] == 'Result':
 		scores.append(cric.livescore(match['id']))
 
 for i in range(len(scores)):
