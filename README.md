@@ -1,2 +1,2 @@
-# cricket_score_notifier
-Receive desktop notifications about live scores
+Cricket score notifier
+Get live cricket scores on your desktop
