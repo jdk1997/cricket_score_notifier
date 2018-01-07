@@ -15,6 +15,9 @@ notif.set_timeout(10000)
 for match in matches:
 	if match['mchstate'] == 'inprogress' or match['mchstate'] == 'Result':
 		scores.append(cric.livescore(match['id']))
+	elif match['mchstate'] == 'stump' or match['mchstate'] == 'stumps':
+		notif.update(match['srs'], 'At stumps: ' + match['status'])
+		notif.show()
 
 for i in range(len(scores)):
 	score = scores[i]
