@@ -18,7 +18,16 @@ for match in matches:
 	elif match['mchstate'] == 'stump' or match['mchstate'] == 'stumps':
 		notif.update(match['srs'], 'At stumps: ' + match['status'])
 		notif.show()
-
+	elif match['mchstate'] == 'lunch':
+		notif.update(match['srs'], 'At lunch: ' + match['status'])
+		notif.show()
+	elif match['mchstate'] == 'dinner':
+		notif.update(match['srs'], 'At dinner: ' + match['status'])
+		notif.show()
+	elif match['mchstate'] == 'tea':
+		notif.update(match['srs'], 'At tea: ' + match['status'])
+		notif.show()
+		
 for i in range(len(scores)):
 	score = scores[i]
 	batting = score['batting']['score']
