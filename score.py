@@ -25,7 +25,7 @@ for i in range(len(scores)):
 	if score['matchinfo']['mchstate'] == 'Result':
 		notif.update(score['matchinfo']['mchdesc'], score['matchinfo']['status'])
 	else:
-		notif.update(score['matchinfo']['srs'] + '  ' + batting_team + '  ' + batting_dets['desc'] + '  ' + 'Score: ' + batting_dets['runs'] + '/' + batting_dets['wickets'] + '		' + bowling + '  ' + 'Overs: ' + batting_dets['overs'])	
+		notif.update(score['matchinfo']['srs'] + '  ' + batting_team + '  ' + batting_dets['desc'] + '  ' + 'Score: ' + batting_dets['runs'] + '/' + batting_dets['wickets'] + '		' + bowling + '  ' + 'Overs: ' + batting_dets['overs'], score['matchinfo']['status'])	
 	notif.show()
 	notif.set_timeout(10000)
 	time.sleep(5)
