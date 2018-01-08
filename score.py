@@ -28,8 +28,7 @@ for match in matches:
 		notif.update(match['srs'], 'At tea: ' + match['status'])
 		notif.show()
 		
-for i in range(len(scores)):
-	score = scores[i]
+for score in scores:
 	batting = score['batting']['score']
 	batting_dets = batting[0]
 	batting_team = score['batting']['team']
