@@ -41,3 +41,4 @@ for i in range(len(scores)):
 	notif.show()
 	notif.set_timeout(10000)
 	time.sleep(5)
+notif.close()
