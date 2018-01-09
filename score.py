@@ -14,11 +14,11 @@ notif.set_urgency(notify2.URGENCY_NORMAL)
 notif.set_timeout(100000)
 
 for match in matches:
-	if match['mchstate'] == 'inprogress' or match['mchstate'] == 'Result':
+	if match['mchstate'] == 'inprogress' or match['mchstate'] == 'Result' match['mchstate'] == 'complete':
 		try:
 			scores.append(cric.livescore(match['id']))
 		except KeyError:
-			if match['mchstate'] == 'Result':
+			if match['mchstate'] == 'Result' or match['mchstate']:
 				notif.update(match['srs'] + ', ' + match['mnum'], match['mchdesc'] + '\n' + match['status'])
 				notif.show()	
 	elif match['mchstate'] == 'stump':
@@ -38,9 +38,6 @@ for match in matches:
 		notif.show()
 	elif match['mchstate'] == 'preview':
 		notif.update('Up next ' + match['srs'], match['mnum'] + ' ' + match['status'])
-		notif.show()
-	elif match['mchstate'] == 'complete':
-		notif.update(match['srs'] + ', ' + match['mnum'], match['mchdesc'] + '\n' + match['status'])
 		notif.show()
 
 for score in scores:
