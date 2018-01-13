@@ -20,25 +20,32 @@ for match in matches:
 		except KeyError:
 			if match['mchstate'] == 'Result' or match['mchstate']:
 				notif.update(match['srs'] + ', ' + match['mnum'], match['mchdesc'] + '\n' + match['status'])
-				notif.show()	
+				notif.show()
+				time.sleep(5)
 	elif match['mchstate'] == 'stump':
 		notif.update(match['srs'], '\nAt stumps: ' + match['status'])
 		notif.show()
+		time.sleep(5)
 	elif match['mchstate'] == 'tea':
 		notif.update(match['srs'], '\nAt tea: ' + match['status'])
 		notif.show()
+		time.sleep(5)
 	elif match['mchstate'] == 'lunch':
 		notif.update(match['srs'], '\nAt lunch: ' + match['status'])
 		notif.show()
+		time.sleep(5)
 	elif match['mchstate'] == 'dinner':
 		notif.update(match_dets['srs'], '\nAt dinner: ' + match_dets['status'])
 		notif.show()
+		time.sleep(5)
 	elif match['mchstate'] == 'rain':
 		notif.update(match['srs'], match['status'] + '\n' + 'Play stopped due to rain.')
 		notif.show()
+		time.sleep(5)
 	elif match['mchstate'] == 'preview':
 		notif.update('Up next ' + match['srs'], match['mnum'] + ' ' + match['status'])
 		notif.show()
+		time.sleep(5)
 
 for score in scores:
 	batting = score['batting']['score']
