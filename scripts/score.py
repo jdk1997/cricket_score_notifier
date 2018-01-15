@@ -8,6 +8,7 @@ ICON = '/home/dell/Downloads/beautiful-fantasy-cricket-bat-and-ball-hd-free-wall
 cric = Cricbuzz()
 matches = cric.matches()
 scores = []
+flag = 0
 
 notify2.init('Cricket updates')
 notif = notify2.Notification(None, icon = ICON)
@@ -43,9 +44,10 @@ for match in matches:
 		notif.update(match['srs'], match['status'] + '\n' + 'Play stopped due to rain.')
 		notif.show()
 		time.sleep(5)
-	elif match['mchstate'] == 'preview':
+	elif match['mchstate'] == 'preview' and flag == 0:
 		notif.update('Up next ' + match['srs'], match['mnum'] + ' ' + match['status'])
 		notif.show()
+		flag = 1
 		time.sleep(5)
 
 for score in scores:
