@@ -40,8 +40,8 @@ for match in matches:
 		notif.update(match_dets['srs'], '\nAt dinner: ' + match_dets['status'])
 		notif.show()
 		time.sleep(5)
-	elif match['mchstate'] == 'rain':
-		notif.update(match['srs'], match['status'] + '\n' + 'Play stopped due to rain.')
+	elif match['mchstate'] == 'rain' or match['mchstate'] == 'badlight':
+		notif.update(match['srs'], match['status'] + '\n' + 'Play stopped due to rain/badlight.')
 		notif.show()
 		time.sleep(5)
 	elif match['mchstate'] == 'preview' and flag == 0:
