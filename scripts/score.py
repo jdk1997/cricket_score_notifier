@@ -37,7 +37,11 @@ for match in matches:
 		notif.show()
 		time.sleep(5)
 	elif match['mchstate'] == 'dinner':
-		notif.update(match_dets['srs'], '\nAt dinner: ' + match_dets['status'])
+		notif.update(match['srs'], '\nAt dinner: ' + match['status'])
+		notif.show()
+		time.sleep(5)
+	elif match['mchstate'] == 'innings break':
+		notif.update(match['srs'], match['mnum']+ '\n' + '\nInnings break: ' + match['status'])
 		notif.show()
 		time.sleep(5)
 	elif match['mchstate'] == 'rain' or match['mchstate'] == 'badlight':
