@@ -48,8 +48,8 @@ for match in matches:
 		notif.update(match['srs'], match['status'] + '\n' + 'Play stopped due to rain/badlight.')
 		notif.show()
 		time.sleep(5)
-	elif match['mchstate'] == 'preview' and flag == 0:
-		notif.update('Up next ' + match['srs'], match['mnum'] + ' ' + match['status'])
+	elif match['mchstate'] == 'preview' or match['mchstate'] == 'nextlive' and flag == 0:
+		notif.update('Up next ' + match['srs'], match['mnum'] + '\n' + match['status'])
 		notif.show()
 		flag = 1
 		time.sleep(5)
