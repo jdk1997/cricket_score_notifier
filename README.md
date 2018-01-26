@@ -4,3 +4,5 @@ PyCricbuzz.
 
 
 ![Screenshot](Screenshot.png)
+
+You can set up the bash script as a cron job on Linux. 
